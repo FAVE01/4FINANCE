@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react'
 import styled from 'styled-components'
+import { sum } from 'lodash'
 import { useParams } from 'react-router'
 import { useWeb3React } from '@web3-react/core'
 import { Flex } from '@pancakeswap/uikit'
@@ -53,6 +54,9 @@ const IndividualNFTPage = () => {
   const cheapestBunny = bunniesSortedByPrice[0]
   const cheapestBunnyFromOtherSellers = allBunniesFromOtherSellers[0]
 
+  const totalMinted = attributesDistribution ? sum(Object.values(attributesDistribution)) : 0
+  const count: number = attributesDistribution ? attributesDistribution[tokenId] : 0
+  const percentage = (count / totalMinted) * 100
   const isPBCollection = collectionAddress.toLowerCase() === pancakeBunniesAddress.toLowerCase()
 
   // useUpdateNftInfo(collectionAddress)
@@ -151,7 +155,12 @@ const IndividualNFTPage = () => {
         <Flex flexDirection="column" width="100%">
           <ManageCard bunnyId={tokenId} lowestPrice={cheapestBunny?.marketData?.currentAskPrice} />
           <PropertiesCard properties={properties} rarity={propertyRarity} />
-          <DetailsCard contractAddress={collectionAddress} ipfsJson={cheapestBunny?.marketData?.metadataUrl} />
+          <DetailsCard
+            contractAddress={collectionAddress}
+            ipfsJson={cheapestBunny?.marketData?.metadataUrl}
+            count={count}
+            percentage={percentage}
+          />
         </Flex>
         <ForSaleTableCard
           nftsForSale={sortedNfts}
