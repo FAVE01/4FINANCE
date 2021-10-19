@@ -37,7 +37,7 @@
     "@types/multicodec": "^1.0.0",
     "@types/node": "^13.13.5",
     "@types/qs": "^6.9.6",
-    "@types/react": "^17.0.5",
+    "@types/react": "^17.0.24",
     "@types/react-dom": "^17.0.4",
     "@types/react-router-dom": "^5.1.5",
     "@types/react-window": "^1.8.3",
