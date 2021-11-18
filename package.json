@@ -41,7 +41,7 @@
     "@types/react-dom": "^17.0.4",
     "@types/react-router-dom": "^5.1.5",
     "@types/react-window": "^1.8.3",
-    "@types/styled-components": "^5.1.7",
+    "@types/styled-components": "^5.1.14",
     "@uniswap/token-lists": "^1.0.0-beta.19",
     "@uniswap/v2-core": "^1.0.0",
     "@uniswap/v2-periphery": "^1.1.0-beta.0",
