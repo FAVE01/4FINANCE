@@ -62,7 +62,7 @@
     "lodash": "^4.17.21",
     "multicodec": "^2.0.0",
     "multihashes": "^3.0.1",
-    "node-fetch": "^2.6.1",
+    "node-fetch": "^3.2.10",
     "numeral": "^2.0.6",
     "qs": "^6.9.4",
     "react": "^17.0.1",
